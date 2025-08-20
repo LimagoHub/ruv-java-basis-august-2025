@@ -12,7 +12,7 @@ public class Main {
 		
 		for(int i = 0; i < 10; i++) {
 			if(! meinStapel.isFull()) {
-				meinStapel.push(new Schwein("Schwein Nr." + i));
+				//meinStapel.push(new Schwein("Schwein Nr." + i));
 				meinStapel.push(new Punkt(i,i));
 				meinStapel.push(new Kreis(i));
 				//meinStapel.push(i);

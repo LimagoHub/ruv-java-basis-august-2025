@@ -18,7 +18,7 @@ public class Stapel<T> {
 	}
 
 	
-	public void push(T value) {
+	public void push(T value) throws StapelException{
 		if(isFull()) return;
 		feld[index++] = value;
 	}
