@@ -2,11 +2,11 @@ package de.ruv.collections;
 /**
  * 
  */
-public class Stapel {
+public class Stapel<T> {
 
 	private static final int DEFAULT_SIZE = 10; 
 	private int index;
-	private int [] feld;
+	private T [] feld;
 	
 	public Stapel() {
 		this(DEFAULT_SIZE);
@@ -14,17 +14,17 @@ public class Stapel {
 	
 	public Stapel(int groesse) {
 		index = 0;
-		feld= new int[groesse<1?DEFAULT_SIZE:groesse];
+		feld= (T []) new Object[groesse<1?DEFAULT_SIZE:groesse];
 	}
 
 	
-	public void push(int value) {
+	public void push(T value) {
 		if(isFull()) return;
 		feld[index++] = value;
 	}
 	
-	public int pop() {
-		if(isEmpty()) return 0;
+	public T pop() {
+		if(isEmpty()) return null;
 		return feld[--index];
 	}
 	public boolean isEmpty() {
