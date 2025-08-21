@@ -11,9 +11,13 @@ public class Main {
 			
 			c =  a / b; 
 			
-		} catch (ArrayIndexOutOfBoundsException e) {
+		} catch (ArrayIndexOutOfBoundsException | ArithmeticException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		 catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 		}
 		
 		System.out.println("Vielen Dank Sie haben ein kleines Programm echt gluecklich gemacht");

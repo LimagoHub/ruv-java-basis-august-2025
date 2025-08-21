@@ -8,23 +8,30 @@ public class Stapel<T> {
 	private int index;
 	private T [] feld;
 	
-	public Stapel() {
+	public Stapel() throws StapelException {
 		this(DEFAULT_SIZE);
 	}
 	
-	public Stapel(int groesse) {
-		index = 0;
-		feld= (T []) new Object[groesse<1?DEFAULT_SIZE:groesse];
+	public Stapel(int groesse) throws StapelException {
+		try {
+			index = 0;
+			feld= (T []) new Object[groesse];
+		} catch (Exception e) {
+			throw new StapelException("Init", e);
+		}
 	}
 
 	
 	public void push(T value) throws StapelException{
-		if(isFull()) return;
-		feld[index++] = value;
+		try {
+			feld[index++] = value;
+		} catch(Exception e) {
+			throw new StapelException("Overflow", e);
+		}
 	}
 	
-	public T pop() {
-		if(isEmpty()) return null;
+	public T pop() throws StapelException{
+		if(isEmpty())  throw new StapelException("Underflow");;
 		return feld[--index];
 	}
 	public boolean isEmpty() {
