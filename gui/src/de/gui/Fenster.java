@@ -39,6 +39,10 @@ public class Fenster extends Frame implements KeyListener{
 
 	@Override
 	public void keyPressed(KeyEvent e) {
+		
+		if( e.getKeyCode() == KeyEvent.VK_ESCAPE)
+			dispose();
+		
 		message = "Taste wurde gedrueckt";
 		repaint();
 	}
