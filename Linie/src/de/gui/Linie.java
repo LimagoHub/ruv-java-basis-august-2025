@@ -10,7 +10,7 @@ public class Linie extends Frame {
 
 	private static final int SIZE = 500;
 	
-	
+	// Schattenfenster erstellen
 	private BufferedImage image = new BufferedImage(SIZE,SIZE, BufferedImage.TYPE_INT_RGB);
 	
 	
